@@ -7,10 +7,20 @@
 </script>
 
 <template>
-  <Controller {cells} />
-  <div style="width:100%;height:100%;position:absolute">
+  <div class="fixed">
+    <Controller {cells} />
+  </div>
+  <div style="top:40px;width:100%;height:100%;position:fixed; overflow:auto">
     {#each cells as cell, index}
       <Cell {index} {cells} bind:this={cell} />
     {/each}
   </div>
 </template>
+
+<style>
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+</style>

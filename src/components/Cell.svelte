@@ -3,15 +3,27 @@
   export let index: number;
   export let cells;
 
+  /**
+   * get or set the cell-state (one of: alive, not-alive, dying, emerging)
+   * @param newstate the new state (optional)
+   * @returns the current state
+   */
   export function cellState(newstate?: string) {
     if (newstate) {
       state = newstate;
     }
     return state;
   }
+  /**
+   * get the sytem-independent coordinates of the cell
+   * @returns {x,y}
+   */
   export function getCoords() {
     return coords(index);
   }
+  /**
+   * compute number of living neighbours of current cell and determine future state .
+   */
   export function prepareFate() {
     let { x, y } = coords(index);
     const sum =
@@ -34,6 +46,9 @@
       }
     }
   }
+  /**
+   * apply new state based on prepareFate()
+   */
   export function acceptFate(): string {
     if (state === "dying") {
       state = "not-alive";

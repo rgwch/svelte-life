@@ -12,10 +12,16 @@
   let currentSet;
   let selection: string;
 
+  /**
+   * retrieve stored sets from the browser's localStorage
+   */
   onMount(() => {
     const stored = localStorage.getItem("svelte-life") || "{}";
     initializations = JSON.parse(stored);
   });
+  /**
+   * start or stop
+   */
   function run() {
     if (timer) {
       clearInterval(timer);
@@ -31,6 +37,9 @@
     }
   }
 
+  /**
+   * single step
+   */
   function step() {
     sum = 0;
     for (const cell of cells) {
@@ -43,6 +52,9 @@
     }
     generation += 1;
   }
+  /**
+   * store current cell set to the browser's localStorage
+   */
   function save() {
     const name = prompt("Name für die Startposition");
     if (name) {
@@ -50,7 +62,12 @@
       localStorage.setItem("svelte-life", JSON.stringify(initializations));
     }
   }
+  /**
+   * load a new cell set from the selection box.
+   */
   function load() {
+    generation = 0;
+    sum = 0;
     if (selection.startsWith("--")) {
       for (const cell of cells) {
         cell.cellState("not-alive");
@@ -68,24 +85,40 @@
 </script>
 
 <template>
-  <p>Generation: {generation}; Zahl lebender Zellen: {sum}</p>
-  <button on:click={step}>Schritt</button>
-  <button on:click={run}>{buttontext}</button>
-  <button on:click={save}>Speichern</button>
-  <select bind:value={selection} on:change={load} on:click={load}>
-    <option>--Leeren--</option>
-    {#each Object.keys(initializations) as set}
-      <option>{set}</option>
-    {/each}
-  </select>
+  <div class="bar">
+    <div class="display">
+      Generation: {generation}; Zahl lebender Zellen: {sum}
+    </div>
+    <button on:click={step}>Schritt</button>
+    <button on:click={run}>{buttontext}</button>
+    <button on:click={save}>Speichern</button>
+    <select bind:value={selection} on:change={load}>
+      <option on:click={load}>--Leeren--</option>
+      {#each Object.keys(initializations) as set}
+        <option>{set}</option>
+      {/each}
+    </select>
+  </div>
 </template>
 
 <style>
+  .display {
+    margin-right: 10px;
+    margin-left: 4px;
+    background-color: cornsilk;
+    padding: 6px;
+    font-family: monospace;
+  }
+  .bar {
+    display: flex;
+    flex-direction: row;
+  }
   button {
     background-color: lightskyblue;
     color: black;
     padding: 4px;
     margin-right: 4px;
+    margin-top: 2px;
   }
   button:hover {
     background-color: blue;
