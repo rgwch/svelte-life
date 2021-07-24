@@ -1,10 +1,24 @@
-# Einstieg in Svelte
+# Svelte - Ein neuer Stern am Javascript-Framework-Himmel?
+
+## Spiel des Lebens
+
+1970 entwickelte der britische Mathematiker John Horton Conway ein einfaches Spiel, basierend auf einem zellulären Automaten, das bis heute noch fasziniert: Das 'Game Of Life'. Die Spielregeln sind ganz einfach: Das 'Universum' besteht aus Zellen, die entweder lebend oder unbelebt sein können. Wenn eine unbelebte Zelle genau zwei lebende Nachbarn hat, entsteht in ihr neues Leben. Wenn eine lebende Zelle weniger als zwei oder mehr als drei lebende Nachbarn hat, stirbt sie.
+
+Basierend auf diesen einfachen Regeln können sich recht komplexe 'Lebensformen' entwickeln, wobei nur wenigen eine lange Existenz beschieden ist. Der Wikipedia Artikel (https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) enthält viele weiterführende Informationen dazu. Hier wollen wir eine eigene Version, basierend auf dem modernen Web-Framework Svelte entwickeln.
+
+## Vorussetzungen
+
+Zum Bau und Start der Anwendung benötigen Sie NodeJS in Version 14 oder höher. Wie Sie NodeJS installieren können, entnehmen Sie bitte der Node-Website. Je nach Ihrem Betriebssystem müssen Sie npm separat installieren.
+
 
 ## Start
 
+Zunächst laden wir das svelte-Template herunter und speichern es unter einem neien Namen -hier svelte-life- ab. Dann installieren wir dort die in package.json deklarierten Abhängigkeiten mittels `npm install` oder kurz `npm i` und starten dann die Entwicklunges Version mit `npm run dev`. Zusammen:
+
+
 ````
-npx degit sveltejs/tmplate hexagon
-cd hexagon
+npx degit sveltejs/template svelte-life
+cd svelte-life
 npm i
 npm run dev
 `````

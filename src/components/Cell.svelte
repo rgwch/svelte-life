@@ -3,8 +3,14 @@
   export let index: number;
   export let cells;
 
-  export function cellState() {
+  export function cellState(newstate?: string) {
+    if (newstate) {
+      state = newstate;
+    }
     return state;
+  }
+  export function getCoords() {
+    return coords(index);
   }
   export function prepareFate() {
     let { x, y } = coords(index);
