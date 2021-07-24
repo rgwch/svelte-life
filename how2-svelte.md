@@ -6,7 +6,7 @@
 
 Basierend auf diesen einfachen Regeln können sich recht komplexe 'Lebensformen' entwickeln, wobei nur wenigen eine lange Existenz beschieden ist. Der Wikipedia Artikel (https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) enthält viele weiterführende Informationen dazu. Hier wollen wir eine eigene Version, basierend auf dem modernen Web-Framework Svelte entwickeln.
 
-## Vorussetzungen
+## Voraussetzungen
 
 Zum Bau und Start der Anwendung benötigen Sie NodeJS in Version 14 oder höher. Wie Sie NodeJS installieren können, entnehmen Sie bitte der Node-Website. Je nach Ihrem Betriebssystem müssen Sie npm separat installieren.
 
