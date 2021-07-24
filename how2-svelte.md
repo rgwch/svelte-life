@@ -1,4 +1,4 @@
-# Svelte - Ein neuer Stern am Javascript-Framework-Himmel?
+# Game of Life (Svelte version)
 
 ## Spiel des Lebens
 
