@@ -2,9 +2,19 @@
 
 ## Spiel des Lebens
 
-1970 entwickelte der britische Mathematiker John Horton Conway ein einfaches Spiel, basierend auf einem zellulären Automaten, das bis heute noch fasziniert: Das 'Game Of Life'. Die Spielregeln sind ganz einfach: Das 'Universum' besteht aus Zellen, die entweder lebend oder unbelebt sein können. Wenn eine unbelebte Zelle genau zwei lebende Nachbarn hat, entsteht in ihr neues Leben. Wenn eine lebende Zelle weniger als zwei oder mehr als drei lebende Nachbarn hat, stirbt sie.
+1970 entwickelte der britische Mathematiker John Horton Conway ein einfaches Spiel, basierend auf einem zellulären Automaten, das bis heute noch fasziniert: Das 'Game Of Life'. Die Spielregeln sind ganz einfach: Die 'Welt' besteht aus Zellen, die entweder lebend oder unbelebt sein können. Wenn eine unbelebte Zelle genau zwei lebende Nachbarn hat, entsteht in ihr neues Leben. Wenn eine lebende Zelle weniger als zwei oder mehr als drei lebende Nachbarn hat, stirbt sie.
 
-Basierend auf diesen einfachen Regeln können sich recht komplexe 'Lebensformen' entwickeln, wobei nur wenigen eine lange Existenz beschieden ist. Der Wikipedia Artikel (https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) enthält viele weiterführende Informationen dazu. Dies hier ist eine simpkle eigene Version, basierend auf dem modernen Web-Framework Svelte.
+Basierend auf diesen einfachen Regeln können sich recht komplexe 'Lebensformen' entwickeln, wobei nur wenigen eine lange Existenz beschieden ist. 
+Hier ein Beispiel für eine einfache Ausganskonfiguration, die zu einer Kollision der beiden Objekte führt, aus der eine sich über mehr als 1000 Generationen wachsende Population entwickelt:
+
+![](img/kollision01.jpg)
+
+Der Wikipedia Artikel (https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens) enthält viele weiterführende Informationen dazu. 
+Dies hier ist eine simple eigene Version, erstellt als Fingerübung mit dem modernen Web-Framwework [Svelte](https://svelte.dev). Die Grösse der "Welt" kann in src/services/stores.ts verändert werden. Sie ist in sich geschlossen: Was an einer Seite hinauswandert, tritt an der Gegenüberliegenden wieder ein. 
+
+Wenn einem eine besonders interessante Startkonfiguration geglückt ist, kann man "Speichern". Das speichert nicht den aktuellen Stand, sondern den Stand, wie er beim letzten "Start" war. Speicherort ist der lolale Anwendungsspeicher (localStorage) des Browsers.
+
+Der Rest des Readme ist Originaldokumentation des Svelte templates.
 
 ---
 
